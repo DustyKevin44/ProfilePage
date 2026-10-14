@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="116" height="116" rx="26" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+  <circle cx="60" cy="46" r="22" fill="url(#glowGrad)" opacity="0.85" />
+  <path d="M26 100 C26 78, 42 72, 60 72 C78 72, 94 78, 94 100 Z" fill="url(#glowGrad)" opacity="0.85" />
+  <text x="60" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" fill="#ffffff" text-anchor="middle">KF</text>
+</svg>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Interactive developer portfolio shaped like an exploratory cartographic archipelago. High-performance, zero-framework, 60+ FPS vanilla web engineering.">
+  <meta name="theme-color" content="#070b14">
+  <title>Developer Archipelago // Interactive Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝️</text></svg>">
+</head>
+<body>
+
+  <!-- Fullscreen High-Performance Canvas Viewport -->
+  <canvas id="island-canvas"></canvas>
+
+  <!-- Top Minimalist HUD Header -->
+  <header class="top-hud">
+    <div class="hud-brand" title="Click to view Developer Profile">
+      <div class="brand-initials">KF</div>
+      <div class="brand-info">
+        <span class="brand-name">Kevin Ferm</span>
+        <span class="brand-sector" id="hud-sector">ARCHIPELAGO EXPLORER</span>
+      </div>
+    </div>
+
+    <!-- Center Quick-Jump District Pills -->
+    <nav class="quick-pills-bar" id="quick-district-pills" aria-label="District Navigation">
+      <!-- Injected dynamically from data.js -->
+    </nav>
+
+    <!-- Right Telemetry & Controls -->
+    <div class="hud-telemetry">
+      <button class="action-btn" id="profile-toggle-btn" style="padding: 4px 10px; font-size: 11px; background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 6px;" title="View Kevin Ferm Profile & Ethos">
+        <span>About</span>
+      </button>
+      <div class="hud-coords-box" id="hud-coords">[+0, +0] 100%</div>
+      <button class="icon-btn" id="sound-toggle-btn" title="Toggle audio feedback" aria-label="Toggle audio feedback">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+      <button class="icon-btn" id="reset-cam-btn" title="Reset camera to overview (Space)" aria-label="Reset camera">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+          <path d="M3 3v5h5"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Minimap Radar HUD (Top Right) -->
+  <aside class="minimap-container" aria-label="Radar Minimap">
+    <div class="minimap-box" title="Click anywhere on radar to fly">
+      <canvas id="minimap-canvas" width="130" height="130"></canvas>
+    </div>
+    <span class="minimap-label">RADAR // 1400M SECTOR</span>
+  </aside>
+
+  <!-- Slide-In Zone Detail Drawer -->
+  <aside class="zone-drawer" id="zone-drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-title">
+    <!-- Header -->
+    <div class="drawer-header">
+      <div class="drawer-header-meta">
+        <span class="district-badge" id="drawer-badge">DISTRICT 01</span>
+        <span class="drawer-coords" id="drawer-coords">LOC: [0, 0]</span>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close detail card (Esc)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <p class="drawer-category" id="drawer-category">OVERVIEW</p>
+      <h2 class="drawer-title" id="drawer-title">The Citadel</h2>
+      <p class="drawer-tagline" id="drawer-tagline">Central hub, developer ethos & technical core</p>
+    </div>
+
+    <!-- Scrollable Body Content -->
+    <div class="drawer-body" id="drawer-content">
+      <!-- Injected from data.js based on active district -->
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="drawer-footer">
+      <button class="drawer-nav-btn" id="drawer-prev-btn" title="Previous district (Shift + Tab)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        <span>Prev</span>
+      </button>
+      <span class="drawer-hint-esc">[Esc] or drag to close</span>
+      <button class="drawer-nav-btn" id="drawer-next-btn" title="Next district (Tab)">
+        <span>Next</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Floating Minimalist Keyboard HUD Dock (Bottom Center) -->
+  <footer class="keyboard-hud-dock" aria-label="Keyboard Shortcuts">
+    <!-- District Jump Keys -->
+    <div class="hud-group">
+      <kbd data-key="1">1</kbd>
+      <kbd data-key="2">2</kbd>
+      <kbd data-key="3">3</kbd>
+      <kbd data-key="4">4</kbd>
+      <kbd data-key="5">5</kbd>
+      <span class="hud-group-label">Districts</span>
+    </div>
+
+    <div class="hud-divider"></div>
+
+    <!-- WASD / Arrows Pan -->
+    <div class="hud-group">
+      <kbd data-key="w">W</kbd>
+      <kbd data-key="a">A</kbd>
+      <kbd data-key="s">S</kbd>
+      <kbd data-key="d">D</kbd>
+      <span class="hud-group-label">Pan (or ↑↓←→)</span>
+    </div>
+
+    <div class="hud-divider"></div>
+
+    <!-- Zoom Keys -->
+    <div class="hud-group">
+      <kbd data-key="+">+</kbd>
+      <kbd data-key="-">-</kbd>
+      <span class="hud-group-label">Zoom (Q/E)</span>
+    </div>
+
+    <div class="hud-divider"></div>
+
+    <!-- Overview / Space -->
+    <div class="hud-group">
+      <kbd data-key=" ">Space</kbd>
+      <span class="hud-group-label">Reset</span>
+    </div>
+
+    <div class="hud-divider"></div>
+
+    <!-- Escape Key -->
+    <div class="hud-group">
+      <kbd data-key="escape">Esc</kbd>
+      <span class="hud-group-label">Close</span>
+    </div>
+  </footer>
+
+  <!-- Scripts: Data first, then engine modules, then bootstrapper -->
+  <script src="data.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/island-renderer.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
