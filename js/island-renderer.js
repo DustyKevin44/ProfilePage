@@ -599,42 +599,43 @@ class IslandRenderer {
     ctx.restore();
 
     // --- District 4: The Studio (-360, 280) ---
-    // Camera lens aperture rings & acoustic clover
+    // Acoustic sound waves & creative flow resonance
     ctx.save();
     ctx.translate(-360, 280);
     ctx.strokeStyle = "#38bdf8";
     ctx.lineWidth = 1.5;
 
     ctx.beginPath();
-    ctx.arc(0, 0, 26, 0, Math.PI * 2);
+    ctx.arc(0, 0, 24, 0, Math.PI * 2);
     ctx.fillStyle = "#0c4a6e";
     ctx.fill();
     ctx.stroke();
 
-    // Aperture blades
-    for (let i = 0; i < 6; i++) {
-      const a = (i / 6) * Math.PI * 2 + this.time * 0.15;
+    // Harmonic waveform rings
+    for (let i = 0; i < 3; i++) {
+      const ringR = 10 + i * 5;
+      const pulseA = Math.sin(this.time * 2 + i * 1.2) * 0.4 + 0.6;
       ctx.beginPath();
-      ctx.moveTo(Math.cos(a) * 8, Math.sin(a) * 8);
-      ctx.lineTo(Math.cos(a + 0.6) * 22, Math.sin(a + 0.6) * 22);
+      ctx.arc(0, 0, ringR, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(125, 211, 252, ${pulseA})`;
       ctx.stroke();
     }
 
     ctx.beginPath();
-    ctx.arc(0, 0, 7, 0, Math.PI * 2);
-    ctx.fillStyle = "#7dd3fc";
+    ctx.arc(0, 0, 4, 0, Math.PI * 2);
+    ctx.fillStyle = "#ffffff";
     ctx.fill();
     ctx.restore();
 
     // --- District 5: The Game Den (380, 280) ---
-    // Hexagonal tabletop shield & D20 geometric icon
+    // Hexagonal tabletop strategy grid (Mage Knight & Dune: Imperium)
     ctx.save();
     ctx.translate(380, 280);
     ctx.strokeStyle = "#f43f5e";
     ctx.fillStyle = "#881337";
     ctx.lineWidth = 1.5;
 
-    // Hexagonal tabletop board
+    // Hexagonal tabletop strategy tile
     ctx.beginPath();
     for (let i = 0; i < 6; i++) {
       const a = (i / 6) * Math.PI * 2;
@@ -647,17 +648,14 @@ class IslandRenderer {
     ctx.fill();
     ctx.stroke();
 
-    // Inner D20 triangle facets
+    // Strategic card / board grid
     ctx.beginPath();
-    ctx.moveTo(0, -14);
-    ctx.lineTo(12, 10);
-    ctx.lineTo(-12, 10);
-    ctx.closePath();
+    ctx.rect(-9, -9, 18, 18);
     ctx.strokeStyle = "#fda4af";
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(0, 0, 4, 0, Math.PI * 2);
+    ctx.arc(0, 0, 3.5, 0, Math.PI * 2);
     ctx.fillStyle = "#ffffff";
     ctx.fill();
     ctx.restore();

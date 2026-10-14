@@ -19,9 +19,9 @@ const PORTFOLIO_DATA = {
     avatar: "assets/avatar.svg",
     initials: "KF",
     bio: [
-      "I am a B.S. Information Systems (Systemvetenskap) student at Uppsala University and the founder/full-stack developer behind Nationsmaten.se, serving 500+ monthly users across Uppsala's 13 student nations.",
-      "My technical background spans full-stack web platforms, modern AI tool integrations (including the Esatto GenAI hackathon), C#, Python, PHP, JavaScript, SQL, and OCaml.",
-      "Beyond software development, I am passionate about telephoto photography (Nikon D7100), piano and guitar, European backpacking (Interrail), and deep tabletop strategy gaming (Mage Knight and Dune: Imperium)."
+      "I am a B.S. Information Systems (Systemvetenskap) student at Uppsala University and the founder/full-stack developer behind Nationsmaten.se, reaching over 1,600 monthly active users and 23,000+ page views during semester peaks across Uppsala's 13 student nations.",
+      "My technical background spans full-stack web platforms, machine learning desktop overlays, financial analytics, and modern AI tool integrations (including the Esatto GenAI hackathon), using C#, Python, PHP, JavaScript, SQL, and OCaml.",
+      "Beyond software engineering, I am passionate about AI vibecoding, playing piano and guitar, reading, and deep strategic tabletop board games (Mage Knight and Dune: Imperium)."
     ],
     socials: [
       { name: "GitHub", url: "https://github.com/DustyKevin44", icon: "github" },
@@ -29,7 +29,7 @@ const PORTFOLIO_DATA = {
       { name: "Email", url: "mailto:kevin.ferm6@gmail.com", icon: "mail" }
     ],
     stats: [
-      { label: "Active Platform Users", value: "500+" },
+      { label: "Active Platform Users", value: "1.6k+ MAU" },
       { label: "Student Nations", value: "13" },
       { label: "University Timeline", value: "2025–2028" },
       { label: "Gymnasiet Honors", value: "Summa Cum Laude" }
@@ -90,31 +90,53 @@ const PORTFOLIO_DATA = {
       number: 2,
       name: "The Workshop / Forge",
       category: "Projects & Tech Stack",
-      tagline: "Production web platforms, AI hackathon prototypes & core stack",
+      tagline: "Production web platforms, real-time ML & financial analytics",
       coordinates: { x: 0, y: 0, zoom: 1.15 },
       cameraOffset: { x: 200, y: 0 },
       color: "#34d399", // Emerald Mint
       secondaryColor: "#059669",
       icon: "code",
-      summary: "Hands-on software engineering spanning live multi-tenant web applications, AI API integrations, and 3D prototyping workflows.",
+      summary: "Hands-on software engineering spanning live multi-tenant web applications, real-time game client ML overlays, and statistical quantitative finance.",
       items: [
         {
           title: "Nationsmaten.se",
           role: "Founder & Full-Stack Developer",
-          period: "Oct 2025 — Present",
+          period: "Oct 2025 – Present",
           badge: "Featured Production Platform",
           category: "Full-Stack Web Platform",
-          description: "Built a platform from scratch using PHP, JavaScript, and SQL to aggregate dining menus from all 13 Uppsala student nations, serving 500+ monthly users.",
-          metrics: "500+ Monthly Users • 13 Student Nations Menus Aggregated",
+          description: "Built and scaled a daily dining aggregator centralizing lunch and pub menus across all 13 Uppsala student nations. Reached over 1,600 monthly active users and 23,000+ page views during semester peaks.",
+          metrics: "1.6k+ Peak MAU • 23k+ Views • 13 Student Nations",
           tags: ["PHP", "JavaScript", "SQL", "cPanel", "phpMyAdmin", "Full-Stack Architecture"],
           demoUrl: "https://nationsmaten.se",
           githubUrl: "https://github.com/DustyKevin44"
+        },
+        {
+          title: "League Win Predictor",
+          role: "Creator & ML Developer",
+          period: "2024",
+          badge: "Real-Time Machine Learning",
+          category: "Game AI & Desktop App",
+          description: "Real-time win probability predictor for League of Legends powered by a Random Forest machine learning model. Interfaces live with Riot's local Client API (127.0.0.1:2999) to display an in-game prediction overlay.",
+          metrics: "Real-Time Riot API • Random Forest Model • Live Overlay",
+          tags: ["Python", "Scikit-Learn", "Machine Learning", "Riot Games API", "PyInstaller"],
+          githubUrl: "https://github.com/DustyKevin44/LeagueWinrateProgram"
+        },
+        {
+          title: "Stock Closeness & Market Analytics AI",
+          role: "Quantitative Developer",
+          period: "2024",
+          badge: "Algorithmic Finance",
+          category: "Quantitative Analysis & C#",
+          description: "Quantitative financial analysis program calculating Pearson correlation and cointegration scores on equity return series to detect paired trading opportunities and market divergence using AlphaVantage data.",
+          metrics: "Cointegration & Pearson Scoring • AlphaVantage API • Timeseries Data",
+          tags: ["C#", ".NET", "Statistical Analysis", "AlphaVantage API", "Financial Engineering"],
+          githubUrl: "https://github.com/DustyKevin44/StockClosenessAI"
         }
       ],
       // Core Technical Stack
       techStack: {
         languages: ["C#", "Python", "PHP", "JavaScript", "HTML", "CSS", "SQL", "OCaml", "Tailwind CSS"],
-        tools: ["Git / GitHub", "phpMyAdmin", "cPanel", "Visio", "PowerApps", "Bambu Lab A1 Mini (3D Printing)"]
+        tools: ["Git / GitHub", "phpMyAdmin", "cPanel", "Visio", "PowerApps"]
       }
     },
 
@@ -167,14 +189,20 @@ const PORTFOLIO_DATA = {
       number: 4,
       name: "The Studio",
       category: "Creative Hobbies & Lifestyle",
-      tagline: "Photography, acoustic music, literature & European travel",
+      tagline: "Vibecoding, acoustic music & literature",
       coordinates: { x: -360, y: 280, zoom: 1.25 },
       cameraOffset: { x: 200, y: 0 },
       color: "#38bdf8", // Sky Cyan
       secondaryColor: "#0284c7",
-      icon: "camera",
-      summary: "Creative passions away from the terminal: high-detail photography, instrumental music, reading, and backpacking across Europe.",
+      icon: "sparkles",
+      summary: "Creative passions in and out of the flow state: AI vibecoding, acoustic music, and classic literature.",
       items: [
+        {
+          title: "Vibecoding & Creative AI",
+          icon: "sparkles",
+          badge: "Flow State & AI Prototyping",
+          description: "Exploring creative flow with modern AI pair programmers—rapidly turning spontaneous ideas, interactive experiments, and mechanics into functional software at the speed of thought."
+        },
         {
           title: "Piano, Guitar & Reading",
           icon: "music",
@@ -190,21 +218,20 @@ const PORTFOLIO_DATA = {
       number: 5,
       name: "The Game Den",
       category: "Tabletop & Board Games",
-      tagline: "Strategic tabletop games, custom 3D printing & D&D",
+      tagline: "Strategic tabletop games",
       coordinates: { x: 380, y: 280, zoom: 1.25 },
       cameraOffset: { x: 200, y: 0 },
       color: "#f43f5e", // Rose Coral
       secondaryColor: "#e11d48",
       icon: "dice",
-      summary: "Deep strategic tabletop gaming, custom 3D printed organization inserts, and collaborative campaign storytelling.",
+      summary: "Deep strategic tabletop gaming focusing on tactical deck-building and asymmetrical strategy.",
       items: [
         {
-          title: "Board Game Collection & Custom Inserts",
+          title: "Favorite Board Games",
           icon: "dice",
-          badge: "Strategy & 3D Design",
-          description: "Avid collector and tabletop strategist. Crafts custom inserts and organizes components with precise tolerances using a Bambu Lab A1 Mini 3D printer.",
-          favoriteGames: ["Mage Knight", "Dune: Imperium"],
-          customWork: "Custom 3D-printed box organizers and component trays designed for swift game setup."
+          badge: "Tabletop Strategy",
+          description: "Avid tabletop strategist and board game player focusing on deep asymmetrical deck-building and tactical adventure games.",
+          favoriteGames: ["Mage Knight", "Dune: Imperium"]
         }
       ]
     }

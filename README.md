@@ -16,10 +16,10 @@ Built with **100% Vanilla JavaScript, HTML5 Canvas, and modern CSS3**. Zero exte
 
 - **5 Thematic Districts**:
   - `[1]` **The Academy District**: Bachelor of Science in Information Systems (*Systemvetenskap*) at Uppsala University (2025–2028), plus Alströmergymnasiet (*Summa Cum Laude*, Nils Trolle-Lindgren Stipend, and Teknikcollege certified).
-  - `[2]` **The Workshop / Forge**: Nationsmaten.se (Founder & Full-Stack Developer serving 500+ monthly users aggregating menus from all 13 Uppsala student nations), Esatto GenAI hackathon functional prototypes, and complete Core Technical Stack.
+  - `[2]` **The Workshop / Forge**: Nationsmaten.se (Founder & Full-Stack Developer, 1.6k+ peak MAU, 23k+ views aggregating all 13 Uppsala nations), League Win Predictor (real-time Riot Client API ML overlay), Stock Closeness & Market Analytics AI (quantitative C# Pearson/cointegration analysis), and complete Core Technical Stack.
   - `[3]` **The Corporate Skyline**: Camp Entrepreneur (Summer Entrepreneur, business development and venture execution in Alingsås) and Max Burgers (high-pressure customer service, food safety, and workflow optimization).
-  - `[4]` **The Studio**: High-detail DSLR photography using a Nikon D7100 with telephoto lenses, piano, guitar, literature, 50L–55L backpacking, European Interrail travel, and hosting events like a 3-course *cykelsittning*.
-  - `[5]` **The Game Den**: Deep strategic tabletop gaming with custom 3D-printed component inserts via a Bambu Lab A1 Mini. Favorite games spotlight: **Mage Knight** and **Dune: Imperium**, plus active Dungeons & Dragons (D&D) campaigns.
+  - `[4]` **The Studio**: Vibecoding & Creative AI prototyping, acoustic music (piano & guitar), and literature.
+  - `[5]` **The Game Den**: Deep strategic tabletop board games. Favorite games spotlight: **Mage Knight** and **Dune: Imperium**.
 - **Physical Camera with Lerp**:
   - Sub-pixel linear interpolation (`lerp`) and inertial dampening for buttery-smooth camera pans and zooms.
   - Automatic desktop viewport offsetting so detail cards never occlude island landmarks.

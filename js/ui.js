@@ -581,10 +581,6 @@ class UIController {
    */
   highlightKey(keyName) {
     let selectorKey = keyName.toLowerCase();
-    if (selectorKey === "arrowup") selectorKey = "w";
-    if (selectorKey === "arrowleft") selectorKey = "a";
-    if (selectorKey === "arrowdown") selectorKey = "s";
-    if (selectorKey === "arrowright") selectorKey = "d";
     if (selectorKey === "=") selectorKey = "+";
     if (selectorKey === "_") selectorKey = "-";
     const keycaps = document.querySelectorAll(`[data-key="${selectorKey}"]`);
@@ -593,10 +589,6 @@ class UIController {
 
   unhighlightKey(keyName) {
     let selectorKey = keyName.toLowerCase();
-    if (selectorKey === "arrowup") selectorKey = "w";
-    if (selectorKey === "arrowleft") selectorKey = "a";
-    if (selectorKey === "arrowdown") selectorKey = "s";
-    if (selectorKey === "arrowright") selectorKey = "d";
     if (selectorKey === "=") selectorKey = "+";
     if (selectorKey === "_") selectorKey = "-";
     const keycaps = document.querySelectorAll(`[data-key="${selectorKey}"]`);

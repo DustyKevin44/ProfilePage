@@ -273,6 +273,18 @@ class Camera {
         return;
       }
 
+      // Arrow keys cycle through districts
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        this.cycleDistrict(1);
+        return;
+      }
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        this.cycleDistrict(-1);
+        return;
+      }
+
       // Reset view to overview on Space or '0' or 'r'
       if (e.key === " " || e.key === "0" || key === "r") {
         e.preventDefault();
@@ -335,10 +347,10 @@ class Camera {
     let inputX = 0;
     let inputY = 0;
 
-    if (this.keysDown.has("a") || this.keysDown.has("arrowleft")) inputX -= 1;
-    if (this.keysDown.has("d") || this.keysDown.has("arrowright")) inputX += 1;
-    if (this.keysDown.has("w") || this.keysDown.has("arrowup")) inputY -= 1;
-    if (this.keysDown.has("s") || this.keysDown.has("arrowdown")) inputY += 1;
+    if (this.keysDown.has("a")) inputX -= 1;
+    if (this.keysDown.has("d")) inputX += 1;
+    if (this.keysDown.has("w")) inputY -= 1;
+    if (this.keysDown.has("s")) inputY += 1;
 
     if (inputX !== 0 || inputY !== 0) {
       // Normalize diagonal speed
